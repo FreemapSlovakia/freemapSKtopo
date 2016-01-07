@@ -1,0 +1,1 @@
+Custom style for mkgmap
