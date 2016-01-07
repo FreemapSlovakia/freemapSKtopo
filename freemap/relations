@@ -1,0 +1,58 @@
+# -------------------------------------------------------------------
+# This is the default mkgmap style file for applying rules on
+# OSM relations.  Usually you will set tags on the
+# elements that make up the relation, and the tags will be
+# processed by the rules defined in the "points" or "lines" files.
+#
+# Any line prefaced with # is a comment and will not be applied.
+# Each line is a rule, of the generalised format:
+#  OSM_tag(s)_to_match  [Garmin_type_code resolution]
+# See http://wiki.openstreetmap.org/wiki/Mkgmap/help/style_rules
+# and http://wiki.openstreetmap.org/wiki/Mkgmap/help/Custom_styles
+# for more information.
+
+# turistika 
+type=route & (route=hiking | route=foot) {
+  apply { set tzt_ref='$(tzt_ref),${ref}' | '${ref}'; set tzt_line=yes }
+}
+type=route & (route=hiking | route=foot) & (colour=red | kct_red=*)& symbol!=education{
+	apply { set tzt_r=yes }
+}
+type=route & (route=hiking | route=foot) & (colour=blue | kct_blue=*) & symbol!=education{
+	apply { set tzt_b=yes }
+}
+type=route & (route=hiking | route=foot) & (colour=green | kct_green=*) & symbol!=education {
+	apply { set tzt_g=yes }
+}
+type=route & (route=hiking | route=foot) & (colour=yellow | kct_yellow=*) & symbol!=education{
+	apply { set tzt_y=yes }
+}
+type=route & (route=hiking | route=foot) & (symbol=education | kct_learning=*) {
+	apply { set tzt_e=yes }
+}
+
+# dame aj cyklo ale vsetky jednou farbou
+type=route & route=bicycle {
+  apply { set czt_ref='$(czt_ref),${ref}' | '${ref}'; set czt_line=yes }
+}
+type=route & route=bicycle & colour=red {
+	apply { set cycle_r=yes }
+}
+type=route & route=bicycle & colour=blue {
+	apply { set cycle_b=yes }
+}
+type=route & route=bicycle & colour=green {
+	apply { set cycle_g=yes }
+}
+type=route & route=bicycle & colour=yellow {
+	apply { set cycle_y=yes }
+}
+
+# hranice - zatial iba okresne
+type=boundary & (boundary=administrative & admin_level=8) {
+  apply { set hranica_okres=yes }
+}
+
+type=boundary & (boundary=administrative & admin_level=9) {
+  apply { set hranica_obec=yes }
+}
