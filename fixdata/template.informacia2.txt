@@ -1,0 +1,17 @@
+
+Informácie a postup inštalácie si môete pozrie na http://wiki.freemap.sk/freemapSKtopo
+
+== O projekte OpenStreetMap ==
+Všetky mapové dáta v projekte OpenStreetMap sú tvorené dobrovo¾níkmi, zakres¾ujúcimi cesty, chodníky, POI a iné objekty do mapy. Preto mapa môe obsahova miesta, ktoré nie sú kompletne zmapované. Ktoko¾vek sa môe prida a zlepši mapové pokrytie alebo opravi chybné údaje. Ak máte záujem o vylepšenie dát navštívte http://wiki.freemap.sk/StarterGuide pre ïalšie informácie.
+Chybu na mape môete nahlási aj priamo cez stránku http://osm.org (Posledná ikonka v ståpci napravo. Kliknite na òu, umiestnite znaèku na miesto kde je chyba a popíšte èo za chyba na mape je.), prípadne môete napísa e-mail na freemap@freemap.sk.
+
+== UPOZORNENIE! ==
+Táto mapa ako mnohé ïalšie vo¾ne dostupné mapy, je pripravená neoficiálnymi nástrojmi, ktoré nie sú vırobcom zariadení Garmin podporované.
+Pouitie mapy aj pod¾a postupu je bez záruky a nezaruèujeme, e sa s Vaším zariadením niè nestane. Ak sa predsa len stane ponechajte si všetky kúsky èo Vám ostanú.
+
+== Vylúèenie zodpovednosti ==
+Freemap Slovakia nezodpovedá za iadne ujmy na zdraví, smr následkom úrazu, stratu orientácie, alebo finanèné straty spôsobené nepresnosou, prípadne chybou v poskytovanıch mapovıch podkladoch.
+--
+
+Mapa bola vytvorená programom mkgmap - http://www.mkgmap.org.uk/page/main
+

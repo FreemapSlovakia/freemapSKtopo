@@ -1,0 +1,13 @@
+freemapSKtopo v2
+
+Mapove data: (c) OpenStreetMap prispievatelia
+http://www.openstreetmap.org/copyright
+Tieto data su dotupne pre kohokolvek pod "Open Database License"
+http://opendatacommons.org/licenses/odbl/1.0/
+
+Vrstevnice: (c) NASA 
+http://www2.jpl.nasa.gov/srtm/
+
+Mapa bola vytvorena programom mkgmap
+http://www.mkgmap.org.uk
+

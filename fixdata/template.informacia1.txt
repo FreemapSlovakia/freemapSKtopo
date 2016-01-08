@@ -1,0 +1,9 @@
+== freemapSKtopo ==
+
+Je bezplatná mapa Slovenska s turistickımi a cyklo trasami vytvorená z dát medzinárodného projektu OpenStreetMap.org.
+
+Mapové dáta: (c) OpenStreetMap.org prispievatelia, licencované pod ODbL - http://www.openstreetmap.org/copyright
+Vrstevnice: (c) SRTM, licencované pod public domain - http://www2.jpl.nasa.gov/srtm
+
+Mapa je aktualizovaná zvyèajne kadı pracovná deò, pokia¾ máte túto mapu z iného zdroja ako http://download.freemap.sk/garmin odporúèame Vám skontrolova èi nie je k dispozicií novšia verzia mapy.
+Mapa bola vygenerovaná dòa: 
