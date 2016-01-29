@@ -1,1 +1,1 @@
-put bounds files here
+Put bounds files from http://osm2.pleiades.uni-wuppertal.de/bounds/ here.
