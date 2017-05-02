@@ -47,6 +47,9 @@ type=route & route=bicycle & colour=green {
 type=route & route=bicycle & colour=yellow {
 	apply { set cycle_y=yes }
 }
+type=route & route=bicycle & colour=black {
+	apply { set cycle_k=yes }
+}
 
 # hranice - zatial iba okresne
 type=boundary & (boundary=administrative & admin_level=8) {

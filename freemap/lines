@@ -33,7 +33,8 @@ cycle_g=yes & cycle_r!=*							[0x10E12 resolution 20 continue with_actions]
 cycle_g=yes & cycle_r=yes							[0x10E14 resolution 20 continue with_actions]
 cycle_y=yes & cycle_b!=*							[0x10E13 resolution 20 continue with_actions]
 cycle_y=yes & cycle_b=yes							[0x10E15 resolution 20 continue with_actions]
-(bicycle=designated | cycleway=lane) & highway!=cycleway & cycle_r!=yes & cycle_g!=yes & cycle_b!=yes & cycle_y!=yes							[0x10E16 resolution 20 continue with_actions]
+cycle_k=yes									[0x10E17 resolution 20 continue with_actions]
+(bicycle=designated | cycleway=lane) & highway!=cycleway & cycle_r!=yes & cycle_g!=yes & cycle_b!=yes & cycle_y!=yes & cycle_k!=yes							[0x10E16 resolution 20 continue with_actions]
 
   ## cisla na turistike a cyklo
   ## TODO Basecamp OK, ale Oregon 450 to nezobrazuje :(
