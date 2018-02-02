@@ -172,6 +172,8 @@ barrier=wall | barrier=fence {delete name} 		[0x26 resolution 24 continue]
 natural=tree_row						[0x10700 resolution 24 continue]
 natural=tree_row						[0x10701 resolution 24 continue]
 natural=tree_row						[0x10702 resolution 24]
+natural=valley						[0x12005 resolution 24]
+natural=ridge						[0x12006 resolution 24]
 
 
 landuse=military					[0x10504 resolution 18 continue]
