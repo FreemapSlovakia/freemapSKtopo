@@ -32,22 +32,22 @@ type=route & (route=hiking | route=foot) & (symbol=education | kct_learning=*) {
 }
 
 # dame aj cyklo ale vsetky jednou farbou
-type=route & route=bicycle {
+type=route & (route=bicycle | route=mtb) {
   apply { set czt_ref='$(czt_ref),${ref}' | '${ref}'; set czt_line=yes }
 }
-type=route & route=bicycle & colour=red {
+type=route & (route=bicycle | route=mtb) & colour=red {
 	apply { set cycle_r=yes }
 }
-type=route & route=bicycle & colour=blue {
+type=route & (route=bicycle | route=mtb) & colour=blue {
 	apply { set cycle_b=yes }
 }
-type=route & route=bicycle & colour=green {
+type=route & (route=bicycle | route=mtb) & colour=green {
 	apply { set cycle_g=yes }
 }
-type=route & route=bicycle & colour=yellow {
+type=route & (route=bicycle | route=mtb) & colour=yellow {
 	apply { set cycle_y=yes }
 }
-type=route & route=bicycle & colour=black {
+type=route & (route=bicycle | route=mtb) & colour=black {
 	apply { set cycle_k=yes }
 }
 
