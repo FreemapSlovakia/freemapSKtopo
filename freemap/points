@@ -226,7 +226,7 @@ tourism=hotel | tourism=motel { name '${name} (${operator}) (${stars}*)' | '${na
 tourism=bed_and_breakfast | tourism=guest_house 		[0x2b02 resolution 23]
 tourism=hostel  						[0x2b06 resolution 23]
 tourism=camp_site						[0x2b03 resolution 23]
-tourism=alpine_hut | tourism=chalet				[0x2b05 resolution 23]
+tourism=alpine_hut | tourism=chalet | tourism=wilderness_hut				[0x2b05 resolution 23]
 
 # atrakcie
 tourism=theme_park 						[0x2c01 resolution 23]
