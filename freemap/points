@@ -261,8 +261,10 @@ man_made=adit & disused=yes 							[0x640b resolution 21]
 building=hayloft						[0x291D resolution 21]
 amenity=feeding_place						[0x291C resolution 22]
 
-
 power=generator & generator:source=hydro	[0x6001 resolution 23]
+
+addr:streetnumber=* {name '${addr:streetnumber}'} 			[0x6400 resolution 24]
+addr:housenumber=* & addr:streetnumber!=* {name '${addr:housenumber}'} 			[0x6400 resolution 24]
 
 <finalize>
 amenity=* { name '${name}' }
