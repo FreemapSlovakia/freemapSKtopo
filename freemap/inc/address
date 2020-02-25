@@ -14,7 +14,8 @@ mkgmap:postal_code!=* & mkgmap:postcode=* { set mkgmap:postal_code='${mkgmap:pos
 mkgmap:postal_code!=* & addr:postcode=* { set mkgmap:postal_code='${addr:postcode}' }
 mkgmap:street!=* & addr:street=* { set mkgmap:street='${addr:street}' }
 mkgmap:street!=* & addr:housename=* { set mkgmap:street='${addr:housename}' }
-mkgmap:housenumber!=* & addr:housenumber=* { set mkgmap:housenumber='${addr:housenumber}' }
+mkgmap:housenumber!=* & addr:housenumber=* & addr:streetnumber!=* { set mkgmap:housenumber='${addr:housenumber}' }
+mkgmap:housenumber!=* & addr:streetnumber=* { set mkgmap:housenumber='${addr:streetnumber}' }
 mkgmap:phone!=* & phone=* { set mkgmap:phone='${phone}' }
 mkgmap:phone!=* & contact:phone=* { add mkgmap:phone='${contact:phone}' }
 mkgmap:is_in!=* & is_in=* { set mkgmap:is_in='${is_in}' }

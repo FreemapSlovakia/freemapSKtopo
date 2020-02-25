@@ -106,12 +106,10 @@ amenity=hospital | amenity=clinic 				[0x3002 resolution 22]
 amenity=emergency_phone 					[0x5100 resolution 23]
 
 # -- info --
-##information=map 		{name '${name} - ${description}' | '${name}' | '${description}' } 	[0x4c01 resolution 23]
 information=map 		{name '${name}'; add mkgmap:label:2='${description}'} 	[0x4c01 resolution 23]
 (information=guidepost & bicycle!=yes & hiking!=*)	{name '${name} (${ele}m)' | '${name}' | '${description}' } [0x4c02 resolution 22]
 (information=guidepost & hiking=yes)	{name '${name} (${ele}m)' | '${name}' | '${description}' }	[0x4c02 resolution 21 continue]
 (information=guidepost & bicycle=yes)	{name '${name} (${ele}m)' | '${name}' | '${description}' }	[0x4c03 resolution 21 ]
-##information=board 		{name '${name} - ${description}' | '${name}' | '${description}' } [0x4c04 resolution 22]
 information=board 		{name '${ref} - ${name}' | '${name}' | '${ref}'; add mkgmap:label:2='${description}' }		[0x4c04 resolution 22]
 ##tourism=information & hiking!=* & bicycle!=* {name '${name} - ${description} - ${operator}'| '${name} - ${description}' | '${name}' | '${description}' | '${operator}' | '${ref}' } 								 [0x4c00 resolution 23]
 tourism=information & hiking!=* & bicycle!=* {name '${name}' | '${ref}' ; add mkgmap:label:2='${description}'} 								 [0x4c00 resolution 23]
@@ -124,7 +122,6 @@ man_made=tower 							[0x6411 resolution 21]
 man_made=windmill 						[0x6418 resolution 22]
 man_made=observatory 						[0x6413 resolution 22]
 man_made=chimney						[0x640a resolution 20]
-
 
 
 # -- historicke --
@@ -179,11 +176,11 @@ shop=supermarket | shop=hypermarket				[0x2e04 resolution 23]
 amenity=pharmacy { name '${name}' }				[0x2e05 resolution 23]
 shop=outdoor 							[0x2e07 resolution 23]
 shop=bakery | shop=bakers | shop=baker				[0x2e0e resolution 23]
-shop=kiosk            						[0x2e00 resolution 24]
+shop=kiosk							[0x2e00 resolution 24]
 amenity=marketplace						[0x2e02 resolution 23]
-shop=bicycle                 [0x2e0a resolution 23]
+shop=bicycle							[0x2e0a resolution 23]
 
-sport=skiing 							[0x2d06 resolution 23]
+sport=skiing							[0x2d06 resolution 23]
 sport=10pin | sport=9pin | sport=bowling			[0x2d07 resolution 23]
 sport=skating | leisure=ice_rink 				[0x2d08 resolution 23]
 sport=swimming					[0x2d09 resolution 24]
@@ -196,7 +193,7 @@ leisure=miniature_golf						[0x2d05 resolution 24]
 leisure=golf_course						[0x2d05 resolution 24]
 
 
-leisure=sports_center | leisure=sports_centre & name=* {name '${name} (${sport})' | '${name}' } [0x2d0a resolution 22]
+(leisure=sports_center | leisure=sports_centre) & name=* {name '${name} (${sport})' | '${name}' } [0x2d0a resolution 22]
 leisure=stadium & name=* {name '${name} (${sport})' | '${name}' } 			[0x2c08 resolution 22]
 leisure=track & name=* {name '${name} (${sport})' | '${name}' } 				[0x2c08 resolution 22]
 leisure=pitch & name=* {name '${name} (${sport})' | '${name}' | '${sport}' } [0x2c08 resolution 23]
@@ -206,9 +203,6 @@ leisure=marina & name=*						[0x4300 resolution 23]
 harbour=yes & name=*						[0x4300 resolution 23]
 #ikona!
 leisure=water_park & name=*					[0x5300 resolution 23]
-## netreba to ako POI >leisure=park & name=*						[0x2c06 resolution 23]
-## netreba to ako POI >leisure=nature_reserve & name=*					[0x2c06 resolution 16]
-## netreba to ako POI >boundary=national_park & name=*					[0x2c06 resolution 16]
 leisure=playground & name=*					[0x2c06 resolution 23]
 
 amenity=theatre 						[0x2d01 resolution 24]
@@ -221,8 +215,8 @@ amenity=courthouse						[0x3004 resolution 24]
 
 # ubytovanie
 tourism=hotel | tourism=motel { name '${name} (${operator}) (${stars}*)' | '${name} (${stars}*)' | '${operator} (${stars}*)' | '${name}' } 		  [0x2b01 resolution 22]
-tourism=bed_and_breakfast | tourism=guest_house 		[0x2b02 resolution 23]
-tourism=hostel  						[0x2b06 resolution 23]
+tourism=bed_and_breakfast | tourism=guest_house		[0x2b02 resolution 23]
+tourism=hostel						[0x2b06 resolution 23]
 tourism=camp_site						[0x2b03 resolution 23]
 tourism=alpine_hut | tourism=chalet | tourism=wilderness_hut				[0x2b05 resolution 23]
 
@@ -252,7 +246,6 @@ amenity=bicycle_parking						[0x2f10 resolution 24]
 amenity=bench							[0x2906 resolution 24]
 amenity=hunting_stand 						[0x290a resolution 22]
 military=bunker 						[0x290b resolution 20]
-##amenity=shelter							[0x2b09 resolution 22]
 amenity=shelter & shelter_type!=shopping_cart							[0x290c resolution 21]
 amenity=ranger_house						[0x2b06 resolution 20]
 man_made=mineshaft						[0x640d resolution 21]

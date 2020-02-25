@@ -19,7 +19,7 @@ aeroway=terminal 							[0x0d resolution 23]
 landuse=commercial | landuse=retail					[0x08 resolution 20]
 landuse=industrial 							[0x0c resolution 20]
 
-amenity=hospital 							[0x0b resolution 22]
+amenity=hospital | amenity=clinic 							[0x0b resolution 22]
 ##shop=* & building=*							[0x09 resolution 23]
 
 ##highway=pedestrian & area=yes 						[0x12 resolution 23]
