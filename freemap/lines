@@ -9,40 +9,38 @@ contour=elevation & contour_ext=elevation_major		{ name '${ele|conv:m=>ft}'; }	[
 contour=elevation | contour_ext=elevation		{ name '${ele|conv:m=>ft}'; }	[0x21 resolution 20]
 
 # -- turistika a cyklo -- *martin*
-tzt_r=* 													[0x10E01 resolution 20 continue with_actions]
-tzt_b=* & tzt_r!=* 												[0x10E02 resolution 20 continue with_actions]
-tzt_g=* & tzt_b!=* & tzt_r!=* 											[0x10E03 resolution 20 continue with_actions]
-tzt_y=* & tzt_g!=* & tzt_b!=* & tzt_r!=* 									[0x10E04 resolution 20 continue with_actions]
-(tzt_y=* | tzt_g=*) & tzt_b=* & tzt_r=* 									[0x10E05 resolution 20 continue with_actions]
-tzt_y!=* & tzt_g!=* & tzt_b=* & tzt_r=* 									[0x10E05 resolution 20 continue with_actions]
-tzt_g=* & ((tzt_b=* & tzt_r!=*) | (tzt_b!=* & tzt_r=*)) 							[0x10E06 resolution 20 continue with_actions]
+tzt_r=* 																		[0x10E01 resolution 20 continue with_actions]
+tzt_b=* & tzt_r!=* 																[0x10E02 resolution 20 continue with_actions]
+tzt_g=* & tzt_b!=* & tzt_r!=* 													[0x10E03 resolution 20 continue with_actions]
+tzt_y=* & tzt_g!=* & tzt_b!=* & tzt_r!=* 										[0x10E04 resolution 20 continue with_actions]
+(tzt_y=* | tzt_g=*) & tzt_b=* & tzt_r=* 										[0x10E05 resolution 20 continue with_actions]
+tzt_y!=* & tzt_g!=* & tzt_b=* & tzt_r=* 										[0x10E05 resolution 20 continue with_actions]
+tzt_g=* & ((tzt_b=* & tzt_r!=*) | (tzt_b!=* & tzt_r=*)) 						[0x10E06 resolution 20 continue with_actions]
 tzt_y=* & ((tzt_g=* & tzt_b!=* & tzt_r!=*) | (tzt_g!=* & tzt_b=* & tzt_r!=*) | (tzt_g!=* & tzt_b!=* & tzt_r=*))	[0x10E07 resolution 20 continue with_actions]
-tzt_y!=* & tzt_g=* & tzt_b=* & tzt_r=* 									
-	[0x10E08 resolution 20 continue with_actions]
+tzt_y!=* & tzt_g=* & tzt_b=* & tzt_r=* 											[0x10E08 resolution 20 continue with_actions]
 tzt_y=* & ((tzt_g=* & tzt_b=* & tzt_r!=*) | (tzt_g!=* & tzt_b=* & tzt_r=*) | (tzt_g=* & tzt_b!=* & tzt_r=*)) 	[0x10E09 resolution 20 continue with_actions]
-tzt_y=* & tzt_g=* & tzt_b=* & tzt_r=* 										[0x10E0A resolution 20 continue with_actions]
+tzt_y=* & tzt_g=* & tzt_b=* & tzt_r=* 											[0x10E0A resolution 20 continue with_actions]
 # -- naucny chodnik --
 tzt_e=* & tzt_y!=* & tzt_g!=* & tzt_b!=* & tzt_r!=*								[0x10E0B resolution 20 continue with_actions]
 tzt_e=* & ((tzt_y!=* & tzt_g!=* & tzt_b!=* & tzt_r=*) | (tzt_y!=* & tzt_g!=* & tzt_b=* & tzt_r!=*) | (tzt_y=* & tzt_g!=* & tzt_b!=* & tzt_r!=*))	[0x10E0C resolution 20 continue with_actions]
 tzt_e=* & ((tzt_y!=* & tzt_g!=* & tzt_b=* & tzt_r=*) | (tzt_y!=* & tzt_g=* & tzt_b!=* & tzt_r=*) | (tzt_y=* & tzt_g!=* & tzt_b!=* & tzt_r=*) | (tzt_y!=* & tzt_g=* & tzt_b=* & tzt_r!=*) | (tzt_y=* & tzt_g!=* & tzt_b=* & tzt_r!=*) | (tzt_y=* & tzt_g=* & tzt_b!=* & tzt_r!=*))	[0x10E0D resolution 20 continue with_actions]
 tzt_e=* & ((tzt_y!=* & tzt_g=* & tzt_b=* & tzt_r=*) | (tzt_y=* & tzt_g!=* & tzt_b=* & tzt_r=*) | (tzt_y=* & tzt_g=* & tzt_b=* & tzt_r!=*))		[0x10E0E resolution 20 continue with_actions]
 # -- cyklo trasy --
-cycle_r=yes									[0x10E10 resolution 20 continue with_actions]
-cycle_b=yes									[0x10E11 resolution 20 continue with_actions]
-cycle_g=yes & cycle_r!=*							[0x10E12 resolution 20 continue with_actions]
-cycle_g=yes & cycle_r=yes							[0x10E14 resolution 20 continue with_actions]
-cycle_y=yes & cycle_b!=*							[0x10E13 resolution 20 continue with_actions]
-cycle_y=yes & cycle_b=yes							[0x10E15 resolution 20 continue with_actions]
-cycle_k=yes									[0x10E17 resolution 20 continue with_actions]
+cycle_r=yes																		[0x10E10 resolution 20 continue with_actions]
+cycle_b=yes																		[0x10E11 resolution 20 continue with_actions]
+cycle_g=yes & cycle_r!=*														[0x10E12 resolution 20 continue with_actions]
+cycle_g=yes & cycle_r=yes														[0x10E14 resolution 20 continue with_actions]
+cycle_y=yes & cycle_b!=*														[0x10E13 resolution 20 continue with_actions]
+cycle_y=yes & cycle_b=yes														[0x10E15 resolution 20 continue with_actions]
+cycle_k=yes																		[0x10E17 resolution 20 continue with_actions]
 (bicycle=designated | cycleway=lane) & highway!=cycleway & cycle_r!=yes & cycle_g!=yes & cycle_b!=yes & cycle_y!=yes & cycle_k!=yes							[0x10E16 resolution 20 continue with_actions]
 
   ## cisla na turistike a cyklo
-  ## TODO Basecamp OK, ale Oregon 450 to nezobrazuje :(
-tzt_line=yes	{ name 'TZT $(tzt_ref)' }	[0x12001 resolution 20 continue]
-czt_line=yes	{ name 'CZT $(czt_ref)' }	[0x12002 resolution 20 continue]
+tzt_line=yes	{ name 'TZT $(tzt_ref)' }										[0x12001 resolution 20 continue]
+czt_line=yes	{ name 'CZT $(czt_ref)' }										[0x12002 resolution 20 continue]
 
-hranica_okres=yes 							[0x10f08 resolution 14]
-hranica_obec=yes 							[0x10f09 resolution 20]
+hranica_okres=yes 																[0x10f08 resolution 14]
+hranica_obec=yes 																[0x10f09 resolution 20]
 highway=* {set mkgmap:label:2='${alt_name}'}
 highway=* {set mkgmap:label:3='${loc_name}' | '${official_name}' | '${nat_name}' | '${reg_name}' | '${int_name}' | '${old_name}' | '${short_name}'}
 
@@ -73,10 +71,10 @@ bridge=true | bridge=1 | bridge=viaduct {set bridge=yes}
 highway=construction 		[0x11010 resolution 23]
 highway=raceway			[0x11011 resolution 23]
 
-highway=* & bridge=yes & highway!=proposed & highway!=construction & proposed!=*		[0x10106 resolution 22 continue]
-highway=* & tunnel=yes & highway!=proposed & highway!=construction & proposed!=*		[0x10406 resolution 22 continue]
-railway=* & tunnel=yes & disused!=*					[0x10406 resolution 22 continue]
-railway=* & bridge=yes & disused!=*					[0x10106 resolution 22 continue ]
+highway=* & bridge=yes & highway!=proposed & highway!=construction & proposed!=*	[0x10106 resolution 22 continue]
+highway=* & tunnel=yes & highway!=proposed & highway!=construction & proposed!=*	[0x10406 resolution 22 continue]
+railway=* & tunnel=yes & disused!=*												[0x10406 resolution 22 continue]
+railway=* & bridge=yes & disused!=*												[0x10106 resolution 22 continue ]
 
 toll=yes { set mkgmap:toll = yes }
 
@@ -84,17 +82,17 @@ tzt_r=* | tzt_g=* | tzt_b=* | tzt_y=* { set mkgmap:foot = yes}
 cycle_r=* | cycle_g=* | cycle_b=* | cycle_y=* { set mkgmap:bicycle = yes }
 
 
-(highway=* | railway=*) & embankment=yes	[0x10f00 resolution 23 continue]
-#(highway=* | railway=*) & cutting=* [0x resolution 23 continue]
+(highway=* | railway=*) & embankment=yes										[0x10f00 resolution 23 continue]
+#(highway=* | railway=*) & cutting=*											[0x resolution 23 continue]
 
 ##highway=* { set name = '${name} t[$(tzt_ref)] c[$(czt_ref)]' | '${name} t[$(tzt_ref)]' | '${name} c[$(czt_ref)]'; }
 
   ## kruhovy objazd
-junction=roundabout & highway=trunk [0x0c road_class=3 road_speed=2 resolution 18 continue]
-junction=roundabout & highway=primary [0x0c road_class=3 road_speed=2 resolution 19 continue]
-junction=roundabout & highway=secondary [0x0c road_class=2 road_speed=2 resolution 20 continue]
-junction=roundabout & highway=tertiary [0x0c road_class=1 road_speed=1 resolution 21 continue]
-junction=roundabout & highway=unclassified [0x0c road_class=1 road_speed=1 resolution 21 continue]
+junction=roundabout & highway=trunk												[0x0c road_class=3 road_speed=2 resolution 18 continue]
+junction=roundabout & highway=primary											[0x0c road_class=3 road_speed=2 resolution 19 continue]
+junction=roundabout & highway=secondary											[0x0c road_class=2 road_speed=2 resolution 20 continue]
+junction=roundabout & highway=tertiary											[0x0c road_class=1 road_speed=1 resolution 21 continue]
+junction=roundabout & highway=unclassified										[0x0c road_class=1 road_speed=1 resolution 21 continue]
 junction=roundabout & (highway!=trunk | highway!=primary | highway!=secondary | highway!=tertiary | highway!=unclassified) [0x0c road_class=0 road_speed=1 resolution 22 continue]
 
 highway=motorway | highway=motorway_link { name '${ref|highway-symbol:hbox} ${name}' | '${ref|highway-symbol:hbox}' | '${name}'; add bicycle = no; add foot = no } 		[0x01 road_class=4 road_speed=7 resolution 16 continue]
@@ -103,83 +101,82 @@ highway=primary | highway=primary_link { name '${ref|highway-symbol:box} ${name}
 highway=secondary | highway=secondary_link { name '${ref|highway-symbol:oval} ${name}' | '${ref|highway-symbol:oval}' | '${name}';} [0x04 road_class=2 road_speed=3 resolution 19 continue]
 highway=tertiary | highway=tertiary_link { name '${ref|highway-symbol:oval} ${name}' | '${ref|highway-symbol:oval}' | '${name}';} [0x05 road_class=1 road_speed=3 resolution 20 continue]
 
-highway=residential { name '${name}'} 				[0x06 road_class=0 road_speed=2 resolution 21 continue with_actions]
-highway=living_street { name '${name}'}				[0x06 road_class=0 road_speed=1 resolution 22 continue with_actions]
+highway=residential { name '${name}'} 											[0x06 road_class=0 road_speed=2 resolution 21 continue with_actions]
+highway=living_street { name '${name}'}											[0x06 road_class=0 road_speed=1 resolution 22 continue with_actions]
 
-highway=unclassified { name '${name}'}				[0x06 road_class=0 road_speed=3 resolution 21 continue]
+highway=unclassified { name '${name}'}											[0x06 road_class=0 road_speed=3 resolution 21 continue]
 
-highway=service { name '${name}'}				[0x07 road_class=0 road_speed=1 resolution 22 continue]
+highway=service { name '${name}'}												[0x07 road_class=0 road_speed=1 resolution 22 continue]
 
-highway=track							[0x0a road_class=0 resolution 22 continue]
-highway=track & tracktype=grade1				[0x11001 road_class=0 road_speed=2 resolution 22 continue]
-highway=track & tracktype=grade2				[0x11002 road_class=0 road_speed=0 resolution 22 continue]
-highway=track & tracktype=grade3 				[0x11003 road_class=0 road_speed=0 resolution 22 continue]
-highway=track & tracktype=grade4				[0x11004 road_class=0 road_speed=0 resolution 22 continue] 
-highway=track & tracktype=grade5 				[0x11005 road_class=0 road_speed=0 resolution 22 continue]
-  ## bez tracktype predpokladam najhorsiu variantu
-highway=track & tracktype!=*					[0x11005 road_class=0 road_speed=0 resolution 22]
+highway=track																	[0x0a road_class=0 resolution 22 continue]
+highway=track & tracktype=grade1												[0x11001 road_class=0 road_speed=2 resolution 22 continue]
+highway=track & tracktype=grade2												[0x11002 road_class=0 road_speed=0 resolution 22 continue]
+highway=track & tracktype=grade3 												[0x11003 road_class=0 road_speed=0 resolution 22 continue]
+highway=track & tracktype=grade4												[0x11004 road_class=0 road_speed=0 resolution 22 continue]
+highway=track & tracktype=grade5 												[0x11005 road_class=0 road_speed=0 resolution 22 continue]
+  highway=track & tracktype!=*													[0x11005 road_class=0 road_speed=0 resolution 22]
 
 
-highway=cycleway {add access = no; add bicycle = yes; add foot = no} [0x10 road_class=0 road_speed=1 resolution 23]
+highway=cycleway {add access = no; add bicycle = yes; add foot = no}			[0x10 road_class=0 road_speed=1 resolution 23]
 
   ## pozor tu je nastavene ze bicykel nemoze ist na chodniky, iba ak ma nastavene bicycle=yes
-highway=footway  	{add access = no; add foot = yes} 			[0x0e road_class=0 road_speed=0 resolution 23 continue]
+highway=footway  	{add access = no; add foot = yes} 							[0x0e road_class=0 road_speed=0 resolution 23 continue]
 highway=path 		{add access = no; add foot = yes; add bicycle=yes} 			[0x16 road_class=0 road_speed=0 resolution 23 continue]
-highway=steps 		{add access = no; add foot = yes} 			[0x11 road_class=0 road_speed=0 resolution 23 continue]
-highway=pedestrian 	{ name '${name}'; add access = no; add foot = yes} 	[0x0f road_class=0 road_speed=0 resolution 22]
+highway=steps 		{add access = no; add foot = yes} 							[0x11 road_class=0 road_speed=0 resolution 23 continue]
+highway=pedestrian 	{ name '${name}'; add access = no; add foot = yes} 			[0x0f road_class=0 road_speed=0 resolution 22]
 
   ## dalsie znacky na cestu - sipka jedmosmerka, private cesty
-oneway=yes & (highway!=proposed & highway!=construction)	[0x1000f resolution 24 continue]
-oneway=-1 & (highway!=proposed & highway!=construction)		[0x1000e resolution 24 continue]
-highway=* & access=private {add access = no; setaccess 'no'}	[0x1050c resolution 22 continue]
+oneway=yes & (highway!=proposed & highway!=construction)						[0x1000f resolution 24 continue]
+oneway=-1 & (highway!=proposed & highway!=construction)							[0x1000e resolution 24 continue]
+highway=* & access=private {add access = no; setaccess 'no'}					[0x1050c resolution 22 continue]
 
 
 # -- vodne toky  --
  #! tu rozddelime potok a ostatne sipky, rieka bude mat skor
-#(waterway=stream | waterway=river | waterway=canal) & tunnel!=yes  [0x10E00 resolution 24 continue]
-waterway=stream & tunnel!=yes			[0x10E00 resolution 24 continue]
-(waterway=river | waterway=canal) & tunnel!=yes	[0x10E00 resolution 22 continue] 
-waterway=stream & tunnel!=*					[0x18 resolution 22 continue]
-waterway=drain 							[0x18 resolution 24]
-waterway=canal 							[0x1f resolution 20]
-waterway=river & tunnel!=*					[0x1f resolution 20]
-(waterway=river | waterway=canal) & (tunnel=yes | intermittent=yes )	[0x10802 resolution 20]
-waterway=wadi							[0x10802 resolution 22]
-waterway=stream & (tunnel=yes | intermittent=yes)		[0x10801 resolution 22]
+#(waterway=stream | waterway=river | waterway=canal) & tunnel!=yes				[0x10E00 resolution 24 continue]
+waterway=stream & tunnel!=yes													[0x10E00 resolution 24 continue]
+(waterway=river | waterway=canal) & tunnel!=yes									[0x10E00 resolution 22 continue]
+waterway=stream & tunnel!=*														[0x18 resolution 22 continue]
+waterway=drain 																	[0x18 resolution 24]
+waterway=canal 																	[0x1f resolution 20]
+waterway=river & tunnel!=*														[0x1f resolution 20]
+(waterway=river | waterway=canal) & (tunnel=yes | intermittent=yes )			[0x10802 resolution 20]
+waterway=wadi																	[0x10802 resolution 22]
+waterway=stream & (tunnel=yes | intermittent=yes)								[0x10801 resolution 22]
 
 # -- zeleznica --
-#railway=*  							[0x14 resolution 22]
-railway=* & service!=* & disused!=yes & railway!=disused	[0x14 resolution 22]
-railway=* & service=* & disused!=yes & railway!=disused 	[0x10102 resolution 24]
-railway=disused							[0x10100 resolution 24]
+#railway=*  																	[0x14 resolution 22]
+railway=* & service!=* & disused!=yes & railway!=disused						[0x14 resolution 22]
+railway=* & service=* & disused!=yes & railway!=disused 						[0x10102 resolution 24]
+railway=disused																	[0x10100 resolution 24]
 
 # -- letectvo --
-aeroway=runway | aeroway=taxiway 				[0x27 resolution 22]
+aeroway=runway | aeroway=taxiway 												[0x27 resolution 22]
 
 # -- vleky a pod... --
-aerialway=chair_lift 						[0x2b resolution 23]
-aerialway=drag_lift | aerialway=t-bar | aerialway=j-bar | aerialway=rope_tow		[0x10507 resolution 23]
-aerialway=gondola | aerialway=cable_car 		 	[0x10508 resolution 23]
+aerialway=chair_lift 															[0x2b resolution 23]
+aerialway=drag_lift | aerialway=t-bar | aerialway=j-bar | aerialway=rope_tow	[0x10507 resolution 23]
+aerialway=gondola | aerialway=cable_car 		 								[0x10508 resolution 23]
 
 # -- ine --
-man_made=pipeline & location=overground			[0x28 resolution 24]
-power=line {add mkgmap:label:1='${ref}'; set mkgmap:label:2='${voltage}V' }						[0x29 resolution 22]
-power=minor_line {add mkgmap:label:1='${ref}'; add mkgmap:label:2='${voltage}V' }						[0x29 resolution 24]
-natural=cliff 						[0x10501 resolution 22]
-barrier=city_wall {delete name} 			[0x19 resolution 24]
-barrier=ditch 						[0x10504 resolution 24]
-barrier=wall | barrier=fence {delete name} 		[0x26 resolution 24 continue]
-natural=tree_row						[0x10700 resolution 24 continue]
-natural=tree_row						[0x10701 resolution 24 continue]
-natural=tree_row						[0x10702 resolution 24]
-natural=valley						[0x12005 resolution 20]
-natural=ridge						[0x12006 resolution 20]
+man_made=pipeline & location=overground											[0x28 resolution 24]
+power=line {add mkgmap:label:1='${ref}'; set mkgmap:label:2='${voltage}V' }		[0x29 resolution 22]
+power=minor_line {add mkgmap:label:1='${ref}'; add mkgmap:label:2='${voltage}V' }	[0x29 resolution 24]
+natural=cliff 																	[0x10501 resolution 22]
+barrier=city_wall {delete name} 												[0x19 resolution 24]
+barrier=ditch 																	[0x10504 resolution 24]
+barrier=wall | barrier=fence {delete name} 										[0x26 resolution 24 continue]
+natural=tree_row																[0x10700 resolution 24 continue]
+natural=tree_row																[0x10701 resolution 24 continue]
+natural=tree_row																[0x10702 resolution 24]
+natural=valley																	[0x12005 resolution 20]
+natural=ridge																	[0x12006 resolution 20]
 
 
-landuse=military					[0x10504 resolution 18 continue]
-leisure=nature_reserve  				[0x10503 resolution 16 continue] 
-boundary=national_park 					[0x10503 resolution 16 continue]
-boundary=protected_landscape_area			[0x10503 resolution 16 continue]
+landuse=military																[0x10504 resolution 18 continue]
+leisure=nature_reserve  														[0x10503 resolution 16 continue]
+boundary=national_park 															[0x10503 resolution 16 continue]
+boundary=protected_landscape_area												[0x10503 resolution 16 continue]
 
 # -- zakazy a obmedzenia (teda okrem cyclo smerovnika)
 mkgmap:bicycle!=* & bicycle=* & information!=guidepost { set mkgmap:bicycle='${bicycle}' }
