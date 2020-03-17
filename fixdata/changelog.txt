@@ -1,0 +1,5 @@
+zmeny v mape pre garmin zariadenia
++ pridane
+- odobrane
+* zmenene/upravene
+---

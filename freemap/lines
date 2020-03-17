@@ -99,7 +99,7 @@ junction=roundabout & (highway!=trunk | highway!=primary | highway!=secondary | 
 
 highway=motorway | highway=motorway_link { name '${ref|highway-symbol:hbox} ${name}' | '${ref|highway-symbol:hbox}' | '${name}'; add bicycle = no; add foot = no } 		[0x01 road_class=4 road_speed=7 resolution 16 continue]
 highway=trunk | highway=trunk_link { name '${ref|highway-symbol:hbox} ${name}' | '${ref|highway-symbol:hbox}' | '${name}'; add bicycle = no; add foot = no } 		[0x02 road_class=4 road_speed=5 resolution 16 continue]
-highway=primary | highway=primary_link { name '${ref|highway-symbol:oval} ${name}' | '${ref|highway-symbol:oval}' | '${name}';} [0x03 road_class=3 road_speed=4 resolution 17 continue]
+highway=primary | highway=primary_link { name '${ref|highway-symbol:box} ${name}' | '${ref|highway-symbol:box}' | '${name}';} [0x03 road_class=3 road_speed=4 resolution 17 continue]
 highway=secondary | highway=secondary_link { name '${ref|highway-symbol:oval} ${name}' | '${ref|highway-symbol:oval}' | '${name}';} [0x04 road_class=2 road_speed=3 resolution 19 continue]
 highway=tertiary | highway=tertiary_link { name '${ref|highway-symbol:oval} ${name}' | '${ref|highway-symbol:oval}' | '${name}';} [0x05 road_class=1 road_speed=3 resolution 20 continue]
 
@@ -122,7 +122,7 @@ highway=track & tracktype!=*					[0x11005 road_class=0 road_speed=0 resolution 2
 
 highway=cycleway {add access = no; add bicycle = yes; add foot = no} [0x10 road_class=0 road_speed=1 resolution 23]
 
-  ## pozor tu je nastavene ze bicykel nemoze ist na chodniky, iba ma nastavene bicycle=yes
+  ## pozor tu je nastavene ze bicykel nemoze ist na chodniky, iba ak ma nastavene bicycle=yes
 highway=footway  	{add access = no; add foot = yes} 			[0x0e road_class=0 road_speed=0 resolution 23 continue]
 highway=path 		{add access = no; add foot = yes; add bicycle=yes} 			[0x16 road_class=0 road_speed=0 resolution 23 continue]
 highway=steps 		{add access = no; add foot = yes} 			[0x11 road_class=0 road_speed=0 resolution 23 continue]
@@ -158,13 +158,13 @@ aeroway=runway | aeroway=taxiway 				[0x27 resolution 22]
 
 # -- vleky a pod... --
 aerialway=chair_lift 						[0x2b resolution 23]
-aerialway=drag_lift | aerialway=t-bar | aerialway=j-bar		[0x10507 resolution 23]
-aerialway=rope_tow 						[0x10507 resolution 23]
+aerialway=drag_lift | aerialway=t-bar | aerialway=j-bar | aerialway=rope_tow		[0x10507 resolution 23]
 aerialway=gondola | aerialway=cable_car 		 	[0x10508 resolution 23]
 
 # -- ine --
 man_made=pipeline & location=overground			[0x28 resolution 24]
-power=line 						[0x29 resolution 24]
+power=line {add mkgmap:label:1='${ref}'; set mkgmap:label:2='${voltage}V' }						[0x29 resolution 22]
+power=minor_line {add mkgmap:label:1='${ref}'; add mkgmap:label:2='${voltage}V' }						[0x29 resolution 24]
 natural=cliff 						[0x10501 resolution 22]
 barrier=city_wall {delete name} 			[0x19 resolution 24]
 barrier=ditch 						[0x10504 resolution 24]

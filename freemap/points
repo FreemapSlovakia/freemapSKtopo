@@ -101,8 +101,8 @@ amenity=pub | amenity=biergarten | amenity=bar 			[0x2d02 resolution 24]
 # -- zdravie --
 amenity=toilets 						[0x2f0c resolution 24]
 amenity=hospital | amenity=clinic 				[0x3002 resolution 22]
-# TODO  amenity=doctors						[0x4b01 resolution 24]
-# TODO amenity=dentist 						[0x4b02 resolution 24]
+amenity=doctors						[0x4b01 resolution 24]
+amenity=dentist 						[0x4b02 resolution 24]
 amenity=emergency_phone 					[0x5100 resolution 23]
 
 # -- info --
@@ -193,8 +193,8 @@ leisure=miniature_golf						[0x2d05 resolution 24]
 leisure=golf_course						[0x2d05 resolution 24]
 
 
-(leisure=sports_center | leisure=sports_centre) & name=* {name '${name} (${sport})' | '${name}' } [0x2d0a resolution 22]
-leisure=stadium & name=* {name '${name} (${sport})' | '${name}' } 			[0x2c08 resolution 22]
+##(leisure=sports_center | leisure=sports_centre) & name=* {name '${name} (${sport})' | '${name}' } [0x2d0a resolution 22]
+##leisure=stadium & name=* {name '${name} (${sport})' | '${name}' } 			[0x2c08 resolution 22]
 leisure=track & name=* {name '${name} (${sport})' | '${name}' } 				[0x2c08 resolution 22]
 leisure=pitch & name=* {name '${name} (${sport})' | '${name}' | '${sport}' } [0x2c08 resolution 23]
 sport=* & name=*	{name '${name} (${sport})' | '${name}' }					[0x2d0a resolution 23]
