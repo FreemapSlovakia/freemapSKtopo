@@ -160,8 +160,8 @@ aerialway=gondola | aerialway=cable_car 		 								[0x10508 resolution 23]
 
 # -- ine --
 man_made=pipeline & location=overground											[0x28 resolution 24]
-power=line {add mkgmap:label:1='${ref}'; set mkgmap:label:2='${voltage}V' }		[0x29 resolution 22]
-power=minor_line {add mkgmap:label:1='${ref}'; add mkgmap:label:2='${voltage}V' }	[0x29 resolution 24]
+power=line 																		[0x29 resolution 22]
+power=minor_line 																[0x29 resolution 24]
 natural=cliff 																	[0x10501 resolution 22]
 barrier=city_wall {delete name} 												[0x19 resolution 24]
 barrier=ditch 																	[0x10504 resolution 24]
