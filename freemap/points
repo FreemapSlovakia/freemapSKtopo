@@ -179,6 +179,7 @@ shop=bakery | shop=bakers | shop=baker											[0x2e0e resolution 23]
 shop=kiosk																		[0x2e00 resolution 24]
 amenity=marketplace																[0x2e02 resolution 23]
 shop=bicycle																	[0x2e0a resolution 23]
+shop=beverages																	[0x2e0b resolution 23]
 
 
 leisure=miniature_golf { name '${name}' }										[0x2d05 resolution 24]
@@ -223,6 +224,7 @@ tourism=alpine_hut | tourism=chalet | tourism=wilderness_hut					[0x2b05 resolut
 # atrakcie
 tourism=theme_park 																[0x2c01 resolution 23]
 tourism=museum 																	[0x2c02 resolution 22]
+tourism=library 																[0x2c03 resolution 22]
 #ikona!
 tourism=attraction & historic=* 												[0x2c12 resolution 22]
 tourism=attraction {add addr:street='${note}'; add addr:city='${description}'; name '${name} (${operator})' | '${name}'} [0x2c04 resolution 22]
