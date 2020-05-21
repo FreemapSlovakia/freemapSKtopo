@@ -59,7 +59,7 @@ aeroway=helipad																	[0x5904 resolution 23]
 
 # -- amenity --
 amenity=place_of_worship & religion=christian & historic!=wayside_shrine		[0x2c0b resolution 24]
-historic=wayside_shrine  														[0x2c0d resolution 24]
+historic=wayside_shrine | historic=wayside_cross								[0x2c0d resolution 24]
 amenity=place_of_worship & religion=muslim 										[0x300a resolution 24]
 amenity=place_of_worship & religion=jewish 										[0x300b resolution 24]
 amenity=place_of_worship 														[0x2c0b resolution 24]
