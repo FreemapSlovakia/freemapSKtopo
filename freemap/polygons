@@ -5,9 +5,10 @@
 ## nastavme building=hocico na yes
 building=* & building!=no {set building=yes}
 
-landuse=farm | landuse=farmyard | landuse=farmland 								[0x10106 resolution 20]
-landuse=allotments 																[0x37 resolution 20]
-landuse=vineyard 																[0x52 resolution 20]
+landuse=farmyard																[0x10105 resolution 20]
+landuse=farmland																[0x10106 resolution 20]
+landuse=allotments																[0x37 resolution 20]
+landuse=vineyard																[0x52 resolution 20]
 landuse=orchard																	[0x4e resolution 20]
 
 aeroway=airport 																[0x07 resolution 20]
