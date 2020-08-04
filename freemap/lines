@@ -9,22 +9,22 @@ contour=elevation & contour_ext=elevation_major		{ name '${ele|conv:m=>ft}'; }	[
 contour=elevation | contour_ext=elevation		{ name '${ele|conv:m=>ft}'; }	[0x21 resolution 20]
 
 # -- turistika a cyklo -- *martin*
-tzt_r=* 																		[0x10E01 resolution 20 continue with_actions]
-tzt_b=* & tzt_r!=* 																[0x10E02 resolution 20 continue with_actions]
-tzt_g=* & tzt_b!=* & tzt_r!=* 													[0x10E03 resolution 20 continue with_actions]
-tzt_y=* & tzt_g!=* & tzt_b!=* & tzt_r!=* 										[0x10E04 resolution 20 continue with_actions]
-(tzt_y=* | tzt_g=*) & tzt_b=* & tzt_r=* 										[0x10E05 resolution 20 continue with_actions]
-tzt_y!=* & tzt_g!=* & tzt_b=* & tzt_r=* 										[0x10E05 resolution 20 continue with_actions]
-tzt_g=* & ((tzt_b=* & tzt_r!=*) | (tzt_b!=* & tzt_r=*)) 						[0x10E06 resolution 20 continue with_actions]
-tzt_y=* & ((tzt_g=* & tzt_b!=* & tzt_r!=*) | (tzt_g!=* & tzt_b=* & tzt_r!=*) | (tzt_g!=* & tzt_b!=* & tzt_r=*))	[0x10E07 resolution 20 continue with_actions]
-tzt_y!=* & tzt_g=* & tzt_b=* & tzt_r=* 											[0x10E08 resolution 20 continue with_actions]
-tzt_y=* & ((tzt_g=* & tzt_b=* & tzt_r!=*) | (tzt_g!=* & tzt_b=* & tzt_r=*) | (tzt_g=* & tzt_b!=* & tzt_r=*)) 	[0x10E09 resolution 20 continue with_actions]
-tzt_y=* & tzt_g=* & tzt_b=* & tzt_r=* 											[0x10E0A resolution 20 continue with_actions]
+tzt_r=* 																		[0x10000 resolution 20 continue with_actions]
+tzt_b=* & tzt_r!=* 																[0x10001 resolution 20 continue with_actions]
+tzt_g=* & tzt_b!=* & tzt_r!=* 													[0x10002 resolution 20 continue with_actions]
+tzt_y=* & tzt_g!=* & tzt_b!=* & tzt_r!=* 										[0x10003 resolution 20 continue with_actions]
+(tzt_y=* | tzt_g=*) & tzt_b=* & tzt_r=* 										[0x10004 resolution 20 continue with_actions]
+tzt_y!=* & tzt_g!=* & tzt_b=* & tzt_r=* 										[0x10004 resolution 20 continue with_actions]
+tzt_g=* & ((tzt_b=* & tzt_r!=*) | (tzt_b!=* & tzt_r=*)) 						[0x10005 resolution 20 continue with_actions]
+tzt_y=* & ((tzt_g=* & tzt_b!=* & tzt_r!=*) | (tzt_g!=* & tzt_b=* & tzt_r!=*) | (tzt_g!=* & tzt_b!=* & tzt_r=*))	[0x10006 resolution 20 continue with_actions]
+tzt_y!=* & tzt_g=* & tzt_b=* & tzt_r=* 											[0x10007 resolution 20 continue with_actions]
+tzt_y=* & ((tzt_g=* & tzt_b=* & tzt_r!=*) | (tzt_g!=* & tzt_b=* & tzt_r=*) | (tzt_g=* & tzt_b!=* & tzt_r=*)) 	[0x10008 resolution 20 continue with_actions]
+tzt_y=* & tzt_g=* & tzt_b=* & tzt_r=* 											[0x10009 resolution 20 continue with_actions]
 # -- naucny chodnik --
-tzt_e=* & tzt_y!=* & tzt_g!=* & tzt_b!=* & tzt_r!=*								[0x10E0B resolution 20 continue with_actions]
-tzt_e=* & ((tzt_y!=* & tzt_g!=* & tzt_b!=* & tzt_r=*) | (tzt_y!=* & tzt_g!=* & tzt_b=* & tzt_r!=*) | (tzt_y=* & tzt_g!=* & tzt_b!=* & tzt_r!=*))	[0x10E0C resolution 20 continue with_actions]
-tzt_e=* & ((tzt_y!=* & tzt_g!=* & tzt_b=* & tzt_r=*) | (tzt_y!=* & tzt_g=* & tzt_b!=* & tzt_r=*) | (tzt_y=* & tzt_g!=* & tzt_b!=* & tzt_r=*) | (tzt_y!=* & tzt_g=* & tzt_b=* & tzt_r!=*) | (tzt_y=* & tzt_g!=* & tzt_b=* & tzt_r!=*) | (tzt_y=* & tzt_g=* & tzt_b!=* & tzt_r!=*))	[0x10E0D resolution 20 continue with_actions]
-tzt_e=* & ((tzt_y!=* & tzt_g=* & tzt_b=* & tzt_r=*) | (tzt_y=* & tzt_g!=* & tzt_b=* & tzt_r=*) | (tzt_y=* & tzt_g=* & tzt_b=* & tzt_r!=*))		[0x10E0E resolution 20 continue with_actions]
+tzt_e=* & tzt_y!=* & tzt_g!=* & tzt_b!=* & tzt_r!=*								[0x1000A resolution 20 continue with_actions]
+tzt_e=* & ((tzt_y!=* & tzt_g!=* & tzt_b!=* & tzt_r=*) | (tzt_y!=* & tzt_g!=* & tzt_b=* & tzt_r!=*) | (tzt_y=* & tzt_g!=* & tzt_b!=* & tzt_r!=*))	[0x1000B resolution 20 continue with_actions]
+tzt_e=* & ((tzt_y!=* & tzt_g!=* & tzt_b=* & tzt_r=*) | (tzt_y!=* & tzt_g=* & tzt_b!=* & tzt_r=*) | (tzt_y=* & tzt_g!=* & tzt_b!=* & tzt_r=*) | (tzt_y!=* & tzt_g=* & tzt_b=* & tzt_r!=*) | (tzt_y=* & tzt_g!=* & tzt_b=* & tzt_r!=*) | (tzt_y=* & tzt_g=* & tzt_b!=* & tzt_r!=*))	[0x1000C resolution 20 continue with_actions]
+tzt_e=* & ((tzt_y!=* & tzt_g=* & tzt_b=* & tzt_r=*) | (tzt_y=* & tzt_g!=* & tzt_b=* & tzt_r=*) | (tzt_y=* & tzt_g=* & tzt_b=* & tzt_r!=*))		[0x1000D resolution 20 continue with_actions]
 # -- cyklo trasy --
 cycle_r=yes																		[0x10E10 resolution 20 continue with_actions]
 cycle_b=yes																		[0x10E11 resolution 20 continue with_actions]
@@ -126,8 +126,8 @@ highway=steps 		{add access = no; add foot = yes} 							[0x11 road_class=0 road
 highway=pedestrian 	{ name '${name}'; add access = no; add foot = yes} 			[0x0f road_class=0 road_speed=0 resolution 22]
 
   ## dalsie znacky na cestu - sipka jedmosmerka, private cesty
-oneway=yes & (highway!=proposed & highway!=construction)						[0x1000f resolution 24 continue]
-oneway=-1 & (highway!=proposed & highway!=construction)							[0x1000e resolution 24 continue]
+oneway=yes & highway=* & (highway!=proposed & highway!=construction)			[0x1000f resolution 24 continue]
+oneway=-1 & highway=* & (highway!=proposed & highway!=construction)				[0x1000e resolution 24 continue]
 highway=* & access=private {add access = no; setaccess 'no'}					[0x1050c resolution 22 continue]
 
 
