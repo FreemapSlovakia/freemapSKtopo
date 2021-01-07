@@ -13,18 +13,37 @@ tzt_r=* 																		[0x10000 resolution 20 continue with_actions]
 tzt_b=* & tzt_r!=* 																[0x10001 resolution 20 continue with_actions]
 tzt_g=* & tzt_b!=* & tzt_r!=* 													[0x10002 resolution 20 continue with_actions]
 tzt_y=* & tzt_g!=* & tzt_b!=* & tzt_r!=* 										[0x10003 resolution 20 continue with_actions]
+
 (tzt_y=* | tzt_g=*) & tzt_b=* & tzt_r=* 										[0x10004 resolution 20 continue with_actions]
 tzt_y!=* & tzt_g!=* & tzt_b=* & tzt_r=* 										[0x10004 resolution 20 continue with_actions]
 tzt_g=* & ((tzt_b=* & tzt_r!=*) | (tzt_b!=* & tzt_r=*)) 						[0x10005 resolution 20 continue with_actions]
 tzt_y=* & ((tzt_g=* & tzt_b!=* & tzt_r!=*) | (tzt_g!=* & tzt_b=* & tzt_r!=*) | (tzt_g!=* & tzt_b!=* & tzt_r=*))	[0x10006 resolution 20 continue with_actions]
+
 tzt_y!=* & tzt_g=* & tzt_b=* & tzt_r=* 											[0x10007 resolution 20 continue with_actions]
 tzt_y=* & ((tzt_g=* & tzt_b=* & tzt_r!=*) | (tzt_g!=* & tzt_b=* & tzt_r=*) | (tzt_g=* & tzt_b!=* & tzt_r=*)) 	[0x10008 resolution 20 continue with_actions]
+
 tzt_y=* & tzt_g=* & tzt_b=* & tzt_r=* 											[0x10009 resolution 20 continue with_actions]
 # -- naucny chodnik --
 tzt_e=* & tzt_y!=* & tzt_g!=* & tzt_b!=* & tzt_r!=*								[0x1000A resolution 20 continue with_actions]
 tzt_e=* & ((tzt_y!=* & tzt_g!=* & tzt_b!=* & tzt_r=*) | (tzt_y!=* & tzt_g!=* & tzt_b=* & tzt_r!=*) | (tzt_y=* & tzt_g!=* & tzt_b!=* & tzt_r!=*))	[0x1000B resolution 20 continue with_actions]
 tzt_e=* & ((tzt_y!=* & tzt_g!=* & tzt_b=* & tzt_r=*) | (tzt_y!=* & tzt_g=* & tzt_b!=* & tzt_r=*) | (tzt_y=* & tzt_g!=* & tzt_b!=* & tzt_r=*) | (tzt_y!=* & tzt_g=* & tzt_b=* & tzt_r!=*) | (tzt_y=* & tzt_g!=* & tzt_b=* & tzt_r!=*) | (tzt_y=* & tzt_g=* & tzt_b!=* & tzt_r!=*))	[0x1000C resolution 20 continue with_actions]
 tzt_e=* & ((tzt_y!=* & tzt_g=* & tzt_b=* & tzt_r=*) | (tzt_y=* & tzt_g!=* & tzt_b=* & tzt_r=*) | (tzt_y=* & tzt_g=* & tzt_b=* & tzt_r!=*))		[0x1000D resolution 20 continue with_actions]
+# -- lokalne TZT -- 
+tzt_lokal_r=*																	[0x10E01 resolution 20 continue with_actions]
+tzt_lokal_b=* & tzt_lokal_r!=* 													[0x10E02 resolution 20 continue with_actions]
+tzt_lokal_g=* & tzt_lokal_b!=* & tzt_lokal_r!=* 								[0x10E03 resolution 20 continue with_actions]
+tzt_lokal_y=* & tzt_lokal_g!=* & tzt_lokal_b!=* & tzt_lokal_r!=* 				[0x10E04 resolution 20 continue with_actions]
+
+(tzt_lokal_y=* | tzt_lokal_g=*) & tzt_lokal_b=* & tzt_lokal_r=* 				[0x10E05 resolution 20 continue with_actions]
+tzt_lokal_y!=* & tzt_lokal_g!=* & tzt_lokal_b=* & tzt_lokal_r=* 				[0x10E05 resolution 20 continue with_actions]
+tzt_lokal_g=* & ((tzt_lokal_b=* & tzt_lokal_r!=*) | (tzt_lokal_b!=* & tzt_lokal_r=*)) 			[0x10E06 resolution 20 continue with_actions]
+tzt_lokal_y=* & ((tzt_lokal_g=* & tzt_lokal_b!=* & tzt_lokal_r!=*) | (tzt_lokal_g!=* & tzt_lokal_b=* & tzt_lokal_r!=*) | (tzt_lokal_g!=* & tzt_lokal_b!=* & tzt_lokal_r=*))	[0x10E07 resolution 20 continue with_actions]
+
+tzt_lokal_y!=* & tzt_lokal_g=* & tzt_lokal_b=* & tzt_lokal_r=* 									[0x10E08 resolution 20 continue with_actions]
+tzt_lokal_y=* & ((tzt_lokal_g=* & tzt_lokal_b=* & tzt_lokal_r!=*) | (tzt_lokal_g!=* & tzt_lokal_b=* & tzt_lokal_r=*) | (tzt_lokal_g=* & tzt_lokal_b!=* & tzt_lokal_r=*)) 	[0x10E09 resolution 20 continue with_actions]
+
+##tzt_lokal_y=* & tzt_lokal_g=* & tzt_lokal_b=* & tzt_lokal_r=* 								[0x10E09 resolution 20 continue with_actions]
+
 # -- cyklo trasy --
 cycle_r=yes																		[0x10E10 resolution 20 continue with_actions]
 cycle_b=yes																		[0x10E11 resolution 20 continue with_actions]
