@@ -13,32 +13,32 @@
 
 # turistika 
 
-type=route & (route=hiking | route=foot) & network=lwn & (colour=red | kct_red=* | osmc:symbol~'^red') {
+type=route & (route=hiking | route=foot) & network=lwn & (colour=red | kct_red=* | osmc:symbol~'^red') & symbol!=education {
 	apply { set tzt_lokal_r=yes }
 }
-type=route & (route=hiking | route=foot) & network=lwn & (colour=blue | kct_blue=* | osmc:symbol~'^blue') {
+type=route & (route=hiking | route=foot) & network=lwn & (colour=blue | kct_blue=* | osmc:symbol~'^blue') & symbol!=education {
 	apply { set tzt_lokal_b=yes }
 }
-type=route & (route=hiking | route=foot) & network=lwn & (colour=green | kct_green=* | osmc:symbol~'^green') {
+type=route & (route=hiking | route=foot) & network=lwn & (colour=green | kct_green=* | osmc:symbol~'^green') & symbol!=education {
 	apply { set tzt_lokal_g=yes }
 }
-type=route & (route=hiking | route=foot) & network=lwn & (colour=yellow | kct_yellow=* | osmc:symbol~'^yellow') {
+type=route & (route=hiking | route=foot) & network=lwn & (colour=yellow | kct_yellow=* | osmc:symbol~'^yellow') & symbol!=education {
 	apply { set tzt_lokal_y=yes }
 }
 
 type=route & (route=hiking | route=foot) {
   apply { set tzt_ref='$(tzt_ref),${ref}' | '${ref}'; set tzt_line=yes }
 }
-type=route & (route=hiking | route=foot) & (colour=red | kct_red=*) & symbol!=education & network!=lwn {
+type=route & (route=hiking | route=foot) & (colour=red | kct_red=* | osmc:symbol~'^red') & symbol!=education & network!=lwn {
 	apply { set tzt_r=yes }
 }
-type=route & (route=hiking | route=foot) & (colour=blue | kct_blue=*) & symbol!=education & network!=lwn {
+type=route & (route=hiking | route=foot) & (colour=blue | kct_blue=* | osmc:symbol~'^blue') & symbol!=education & network!=lwn {
 	apply { set tzt_b=yes }
 }
-type=route & (route=hiking | route=foot) & (colour=green | kct_green=*) & symbol!=education & network!=lwn {
+type=route & (route=hiking | route=foot) & (colour=green | kct_green=* | osmc:symbol~'^green') & symbol!=education & network!=lwn {
 	apply { set tzt_g=yes }
 }
-type=route & (route=hiking | route=foot) & (colour=yellow | kct_yellow=*) & symbol!=education & network!=lwn {
+type=route & (route=hiking | route=foot) & (colour=yellow | kct_yellow=* | osmc:symbol~'^yellow') & symbol!=education & network!=lwn {
 	apply { set tzt_y=yes }
 }
 type=route & (route=hiking | route=foot) & (symbol=education | kct_learning=*) {

@@ -2,13 +2,13 @@
 # some inspirations from Charlie Ferrero style, Martin Zdila
 # mkgmap style guide http://www.cferrero.net/maps/
 
-# -- vrstevnice --
+# -- contours --
 contour=elevation & contour_ext=elevation_minor		{ name '${ele|conv:m=>ft}'; }	[0x20 resolution 23]
 contour=elevation & contour_ext=elevation_medium	{ name '${ele|conv:m=>ft}'; }	[0x21 resolution 22]
 contour=elevation & contour_ext=elevation_major		{ name '${ele|conv:m=>ft}'; }	[0x22 resolution 20]
 contour=elevation | contour_ext=elevation		{ name '${ele|conv:m=>ft}'; }	[0x21 resolution 20]
 
-# -- turistika a cyklo -- *martin*
+# -- hiking trails  -- *martin*
 tzt_r=* 																		[0x10000 resolution 20 continue with_actions]
 tzt_b=* & tzt_r!=* 																[0x10001 resolution 20 continue with_actions]
 tzt_g=* & tzt_b!=* & tzt_r!=* 													[0x10002 resolution 20 continue with_actions]
@@ -23,12 +23,14 @@ tzt_y!=* & tzt_g=* & tzt_b=* & tzt_r=* 											[0x10007 resolution 20 continu
 tzt_y=* & ((tzt_g=* & tzt_b=* & tzt_r!=*) | (tzt_g!=* & tzt_b=* & tzt_r=*) | (tzt_g=* & tzt_b!=* & tzt_r=*)) 	[0x10008 resolution 20 continue with_actions]
 
 tzt_y=* & tzt_g=* & tzt_b=* & tzt_r=* 											[0x10009 resolution 20 continue with_actions]
-# -- naucny chodnik --
-tzt_e=* & tzt_y!=* & tzt_g!=* & tzt_b!=* & tzt_r!=*								[0x1000A resolution 20 continue with_actions]
-tzt_e=* & ((tzt_y!=* & tzt_g!=* & tzt_b!=* & tzt_r=*) | (tzt_y!=* & tzt_g!=* & tzt_b=* & tzt_r!=*) | (tzt_y=* & tzt_g!=* & tzt_b!=* & tzt_r!=*))	[0x1000B resolution 20 continue with_actions]
-tzt_e=* & ((tzt_y!=* & tzt_g!=* & tzt_b=* & tzt_r=*) | (tzt_y!=* & tzt_g=* & tzt_b!=* & tzt_r=*) | (tzt_y=* & tzt_g!=* & tzt_b!=* & tzt_r=*) | (tzt_y!=* & tzt_g=* & tzt_b=* & tzt_r!=*) | (tzt_y=* & tzt_g!=* & tzt_b=* & tzt_r!=*) | (tzt_y=* & tzt_g=* & tzt_b!=* & tzt_r!=*))	[0x1000C resolution 20 continue with_actions]
+
+# -- edu trails --
+tzt_e=* & tzt_y!=* & tzt_g!=* & tzt_b!=* & tzt_r!=* & tzt_lokal_y!=* & tzt_lokal_g!=* & tzt_lokal_b!=* & tzt_lokal_r!=*								[0x1000A resolution 20 continue with_actions]
+tzt_e=* & ((tzt_y!=* & tzt_g!=* & tzt_b!=* & tzt_r=*) | (tzt_y!=* & tzt_g!=* & tzt_b=* & tzt_r!=*) | (tzt_y=* & tzt_g!=* & tzt_b!=* & tzt_r!=*)) | ((tzt_lokal_y!=* & tzt_lokal_g!=* & tzt_lokal_b!=* & tzt_lokal_r=*) | (tzt_lokal_y!=* & tzt_lokal_g!=* & tzt_lokal_b=* & tzt_lokal_r!=*) | (tzt_lokal_y=* & tzt_lokal_g!=* & tzt_lokal_b!=* & tzt_lokal_r!=*))	[0x1000B resolution 20 continue with_actions]
+tzt_e=* & ((tzt_y!=* & tzt_g!=* & tzt_b=* & tzt_r=*) | (tzt_y!=* & tzt_g=* & tzt_b!=* & tzt_r=*) | (tzt_y=* & tzt_g!=* & tzt_b!=* & tzt_r=*) | (tzt_y!=* & tzt_g=* & tzt_b=* & tzt_r!=*) | (tzt_y=* & tzt_g!=* & tzt_b=* & tzt_r!=*) | (tzt_y=* & tzt_g=* & tzt_b!=* & tzt_r!=*)) | ((tzt_lokal_y!=* & tzt_lokal_g!=* & tzt_lokal_b=* & tzt_lokal_r=*) | (tzt_lokal_y!=* & tzt_lokal_g=* & tzt_lokal_b!=* & tzt_lokal_r=*) | (tzt_lokal_y=* & tzt_lokal_g!=* & tzt_lokal_b!=* & tzt_lokal_r=*) | (tzt_lokal_y!=* & tzt_lokal_g=* & tzt_lokal_b=* & tzt_lokal_r!=*) | (tzt_lokal_y=* & tzt_lokal_g!=* & tzt_lokal_b=* & tzt_lokal_r!=*) | (tzt_lokal_y=* & tzt_lokal_g=* & tzt_lokal_b!=* & tzt_lokal_r!=*))	[0x1000C resolution 20 continue with_actions]
 tzt_e=* & ((tzt_y!=* & tzt_g=* & tzt_b=* & tzt_r=*) | (tzt_y=* & tzt_g!=* & tzt_b=* & tzt_r=*) | (tzt_y=* & tzt_g=* & tzt_b=* & tzt_r!=*))		[0x1000D resolution 20 continue with_actions]
-# -- lokalne TZT -- 
+
+# -- local hiking trails -- 
 tzt_lokal_r=*																	[0x10E01 resolution 20 continue with_actions]
 tzt_lokal_b=* & tzt_lokal_r!=* 													[0x10E02 resolution 20 continue with_actions]
 tzt_lokal_g=* & tzt_lokal_b!=* & tzt_lokal_r!=* 								[0x10E03 resolution 20 continue with_actions]
@@ -44,7 +46,7 @@ tzt_lokal_y=* & ((tzt_lokal_g=* & tzt_lokal_b=* & tzt_lokal_r!=*) | (tzt_lokal_g
 
 ##tzt_lokal_y=* & tzt_lokal_g=* & tzt_lokal_b=* & tzt_lokal_r=* 								[0x10E09 resolution 20 continue with_actions]
 
-# -- cyklo trasy --
+# -- bicycle trails --
 cycle_r=yes																		[0x10E10 resolution 20 continue with_actions]
 cycle_b=yes																		[0x10E11 resolution 20 continue with_actions]
 cycle_g=yes & cycle_r!=*														[0x10E12 resolution 20 continue with_actions]
@@ -81,7 +83,7 @@ highway=*
 highway=track & tracktype!=* { add mkgmap:unpaved=1 }
 
 
-  ## trochen niektrore tagy zjednodusime
+  ## simplify some tags
 oneway=true | oneway=1 {set oneway=yes}
 tunnel=true | tunnel=1 | tunnel=culvert {set tunnel=yes}
 bridge=true | bridge=1 | bridge=viaduct {set bridge=yes}
@@ -98,6 +100,7 @@ railway=* & bridge=yes & disused!=*												[0x10106 resolution 22 continue ]
 toll=yes { set mkgmap:toll = yes }
 
 tzt_r=* | tzt_g=* | tzt_b=* | tzt_y=* { set mkgmap:foot = yes}
+tzt_lokal_r=* | tzt_lokal_g=* | tzt_lokal_b=* | tzt_lokal_y=* { set mkgmap:foot = yes}
 cycle_r=* | cycle_g=* | cycle_b=* | cycle_y=* { set mkgmap:bicycle = yes }
 
 
@@ -150,7 +153,7 @@ oneway=-1 & highway=* & (highway!=proposed & highway!=construction)				[0x1000e 
 highway=* & access=private {add access = no; setaccess 'no'}					[0x1050c resolution 22 continue]
 
 
-# -- vodne toky  --
+# -- vwater ways  --
  #! tu rozddelime potok a ostatne sipky, rieka bude mat skor
 #(waterway=stream | waterway=river | waterway=canal) & tunnel!=yes				[0x10E00 resolution 24 continue]
 waterway=stream & tunnel!=yes													[0x10E00 resolution 24 continue]
