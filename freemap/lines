@@ -176,8 +176,8 @@ railway=disused																	[0x10100 resolution 24]
 aeroway=runway | aeroway=taxiway 												[0x27 resolution 22]
 
 # -- vleky a pod... --
-aerialway=chair_lift 															[0x2b resolution 23]
-aerialway=drag_lift | aerialway=t-bar | aerialway=j-bar | aerialway=rope_tow	[0x10507 resolution 23]
+aerialway=chair_lift | aerialway=mixed_lift 									[0x2b resolution 23]
+aerialway=drag_lift | aerialway=t-bar | aerialway=j-bar | aerialway=rope_tow | aerialway=magic_carpet	[0x10507 resolution 23]
 aerialway=gondola | aerialway=cable_car 		 								[0x10508 resolution 23]
 
 # -- ine --
