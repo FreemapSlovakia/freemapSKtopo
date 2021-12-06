@@ -61,8 +61,9 @@ tzt_line=yes	{ name '$(tzt_name) ($(tzt_ref))' | 'TZT $(tzt_ref)' | '$(tzt_name)
 czt_line=yes	{ name '$(czt_name) ($(czt_ref))' | 'CZT $(czt_ref)' | '$(czt_name)' }			[0x12002 resolution 20 continue]
 
 
-hranica_okres=yes 																[0x10f08 resolution 14]
-hranica_obec=yes 																[0x10f09 resolution 20]
+hranica_stat=yes 																[0x1e resolution 10]
+#hranica_okres=yes 																[0x10f08 resolution 16]
+#hranica_obec=yes 																[0x10f09 resolution 20]
 highway=* {set mkgmap:label:2='${alt_name}'}
 highway=* {set mkgmap:label:3='${loc_name}' | '${official_name}' | '${nat_name}' | '${reg_name}' | '${int_name}' | '${old_name}' | '${short_name}'}
 

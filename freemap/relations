@@ -11,8 +11,7 @@
 # and http://wiki.openstreetmap.org/wiki/Mkgmap/help/Custom_styles
 # for more information.
 
-# turistika 
-
+# hiking/foot routes 
 type=route & (route=hiking | route=foot) & network=lwn & (colour=red | kct_red=* | osmc:symbol~'^red') & symbol!=education {
 	apply { set tzt_lokal_r=yes }
 }
@@ -46,7 +45,7 @@ type=route & (route=hiking | route=foot) & (symbol=education | kct_learning=*) {
 	apply { set tzt_e=yes }
 }
 
-# dame aj cyklo ale vsetky jednou farbou
+# bicycle/mtb routes
 type=route & (route=bicycle | route=mtb) {
   apply { set czt_ref='$(czt_ref),${ref}' | '${ref}'; set czt_line=yes }
   apply { set czt_name='$(czt_name),${name}' | '${name}'; set czt_line=yes }
@@ -67,11 +66,13 @@ type=route & (route=bicycle | route=mtb) & colour=black {
 	apply { set cycle_k=yes }
 }
 
-# hranice - zatial iba okresne
+# boundaries
+type=boundary & (boundary=administrative & admin_level=2) {
+  apply { set hranica_stat=yes }
+}
 type=boundary & (boundary=administrative & admin_level=8) {
   apply { set hranica_okres=yes }
 }
-
 type=boundary & (boundary=administrative & admin_level=9) {
   apply { set hranica_obec=yes }
 }
