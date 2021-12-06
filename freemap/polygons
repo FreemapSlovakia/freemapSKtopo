@@ -81,7 +81,8 @@ aerialway=station 																[0x0d resolution 23]
 
 waterway=riverbank | waterway=dock 												[0x46 resolution 16] # deprecated 
 natural=water & water=river 													[0x46 resolution 16]
-natural=water 			{ name '${name}' }										[0x3c resolution 16]
+natural=water & intermittent=yes    { name '${name}' }							[0x4c resolution 16]
+natural=water { name '${name}' }									            [0x3c resolution 16]
 landuse=pond | landuse=basin 	{ name '${name}' }								[0x3c resolution 22]
 landuse=reservoir 		{ name '${name}' }										[0x3c resolution 20]
 
