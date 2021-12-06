@@ -57,8 +57,9 @@ cycle_k=yes																		[0x10E17 resolution 20 continue with_actions]
 (bicycle=designated | cycleway=lane) & highway!=cycleway & cycle_r!=yes & cycle_g!=yes & cycle_b!=yes & cycle_y!=yes & cycle_k!=yes							[0x10E16 resolution 20 continue with_actions]
 
   ## cisla na turistike a cyklo
-tzt_line=yes	{ name 'TZT $(tzt_ref)' }										[0x12001 resolution 20 continue]
-czt_line=yes	{ name 'CZT $(czt_ref)' }										[0x12002 resolution 20 continue]
+tzt_line=yes	{ name '$(tzt_name) ($(tzt_ref))' | 'TZT $(tzt_ref)' | '$(tzt_name)' }			[0x12001 resolution 20 continue]
+czt_line=yes	{ name '$(czt_name) ($(czt_ref))' | 'CZT $(czt_ref)' | '$(czt_name)' }			[0x12002 resolution 20 continue]
+
 
 hranica_okres=yes 																[0x10f08 resolution 14]
 hranica_obec=yes 																[0x10f09 resolution 20]

@@ -28,6 +28,7 @@ type=route & (route=hiking | route=foot) & network=lwn & (colour=yellow | kct_ye
 
 type=route & (route=hiking | route=foot) {
   apply { set tzt_ref='$(tzt_ref),${ref}' | '${ref}'; set tzt_line=yes }
+  apply { set tzt_name='$(tzt_name),${name}' | '${name}'; set tzt_line=yes }
 }
 type=route & (route=hiking | route=foot) & (colour=red | kct_red=* | osmc:symbol~'^red') & symbol!=education & network!=lwn {
 	apply { set tzt_r=yes }
@@ -48,6 +49,7 @@ type=route & (route=hiking | route=foot) & (symbol=education | kct_learning=*) {
 # dame aj cyklo ale vsetky jednou farbou
 type=route & (route=bicycle | route=mtb) {
   apply { set czt_ref='$(czt_ref),${ref}' | '${ref}'; set czt_line=yes }
+  apply { set czt_name='$(czt_name),${name}' | '${name}'; set czt_line=yes }
 }
 type=route & (route=bicycle | route=mtb) & colour=red {
 	apply { set cycle_r=yes }
