@@ -62,7 +62,7 @@ czt_line=yes	{ name '$(czt_name) ($(czt_ref))' | 'CZT $(czt_ref)' | '$(czt_name)
 
 
 hranica_stat=yes 																[0x1e resolution 10]
-#hranica_okres=yes 																[0x10f08 resolution 16]
+hranica_okres=yes 																[0x10f08 resolution 16]
 #hranica_obec=yes 																[0x10f09 resolution 20]
 highway=* {set mkgmap:label:2='${alt_name}'}
 highway=* {set mkgmap:label:3='${loc_name}' | '${official_name}' | '${nat_name}' | '${reg_name}' | '${int_name}' | '${old_name}' | '${short_name}'}
@@ -198,9 +198,9 @@ natural=ridge																	[0x12006 resolution 20]
 
 
 landuse=military																[0x10504 resolution 18 continue]
-leisure=nature_reserve  														[0x10503 resolution 16 continue]
-boundary=national_park 															[0x10503 resolution 16 continue]
-boundary=protected_landscape_area												[0x10503 resolution 16 continue]
+boundary=national_park 															[0x10503 resolution 18 continue]
+boundary=protected_landscape_area												[0x10503 resolution 18 continue]
+leisure=nature_reserve  														[0x10503 resolution 18 continue]
 
 # -- zakazy a obmedzenia (teda okrem cyclo smerovnika)
 mkgmap:bicycle!=* & bicycle=* & information!=guidepost { set mkgmap:bicycle='${bicycle}' }

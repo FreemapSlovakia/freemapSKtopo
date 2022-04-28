@@ -67,12 +67,4 @@ type=route & (route=bicycle | route=mtb) & colour=black {
 }
 
 # boundaries
-type=boundary & (boundary=administrative & admin_level=2) {
-  apply { set hranica_stat=yes }
-}
-type=boundary & (boundary=administrative & admin_level=8) {
-  apply { set hranica_okres=yes }
-}
-type=boundary & (boundary=administrative & admin_level=9) {
-  apply { set hranica_obec=yes }
-}
+include 'inc/boundaries';

@@ -151,7 +151,7 @@ natural=sinkhole 																[0x660c resolution 23]
 #sedlo																			[0x660B resolution 23]
 natural=rock & mkgmap:area2poi!=true {name '${name}' }							[0x6614 resolution 23]
 
-place=capitol | place=capital | capital=yes										[0x0100 resolution 16]
+place=capitol | place=capital | capital=yes										[0x0100 resolution 12]
 place=city																		[0x0200 resolution 16]
 place=town																		[0x0800 resolution 23-16 continue]
 place=town																		[0x0900 resolution 24]

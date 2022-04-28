@@ -1,0 +1,14 @@
+## admin boundaries
+
+# country
+type=boundary & (boundary=administrative & admin_level=2) {
+  apply { set hranica_stat=yes }
+}
+# county
+type=boundary & (boundary=administrative & admin_level=8) {
+  apply { set hranica_okres=yes }
+}
+# town/village
+type=boundary & (boundary=administrative & admin_level=9) {
+  apply { set hranica_obec=yes }
+}

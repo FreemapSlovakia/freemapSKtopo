@@ -28,7 +28,7 @@ highway=pedestrian & area=yes 													[0x12 resolution 23]
 power=station																	[0x0d resolution 24]
 power=generator & (generator:method=photovoltaic | generator:source=solar)		[0x13000 resolution 20]
 
-leisure=golf_course | leisure=miniature_golf 									[0x19 resolution 20]
+leisure=golf_course | leisure=miniature_golf 									[0x18 resolution 20]
 leisure=common | leisure = village_green 										[0x17 resolution 20]
 leisure=park | landuse=recreation_ground 										[0x17 resolution 20]
 leisure=dog_park																[0x1A resolution 24]
@@ -47,12 +47,15 @@ military=range | landuse=military												[0x04 resolution 18]
 (natural=wood | landuse=forest) & (wood=mixed | wood!=* | leaf_type=mixed | leaf_type!=*)	[0x10107 resolution 20]
 
 ## chranene uzemia (delene na dve casti hizoom bez vyplne) 
-leisure=nature_reserve  														[0x16 resolution 16-21 continue]
-boundary=national_park { name '${name}' } 										[0x16 resolution 16-21 continue]
-boundary=protected_landscape_area { name '${name}' }							[0x16 resolution 16-21 continue]
-leisure=nature_reserve  														[0x15 resolution 22]
-boundary=national_park { name '${name}' } 										[0x15 resolution 22]
-boundary=protected_landscape_area { name '${name}' }							[0x15 resolution 22]
+##boundary=national_park { name '${name}' } 										[0x16 resolution 16-21 continue]
+##boundary=protected_landscape_area { name '${name}' }							[0x16 resolution 16-21 continue]
+##leisure=nature_reserve  														[0x16 resolution 16-21 continue]
+##boundary=national_park { name '${name}' } 										[0x15 resolution 22]
+##boundary=protected_landscape_area { name '${name}' }							[0x15 resolution 22]
+##leisure=nature_reserve  														[0x15 resolution 22]
+boundary=national_park { name '${name}' } 										[0x16 resolution 14]
+boundary=protected_landscape_area { name '${name}' }							[0x16 resolution 12]
+leisure=nature_reserve { name '${name}' }										[0x16 resolution 12]
 
 natural=beach & natural!=bay 													[0x1b resolution 20]
 surface=sand  & natural!=bay 													[0x1b resolution 20]
@@ -67,13 +70,13 @@ natural=bare_rok																[0x11100 resolution 20]
 landuse=quarry 																	[0x0a resolution 20]
 landuse=landfill 																[0x10f0d resolution 20]
 
-religion=christian & (landuse=cemetary | landuse=cemetery | amenity=graveyard |amenity=grave_yard) [0x10102 resolution 23]
-religion=jewish & (landuse=cemetary | landuse=cemetery | amenity=graveyard |amenity=grave_yard) [0x10103 resolution 23]
-(religion!=jewish | religion!=christian) & (landuse=cemetary | landuse=cemetery | amenity=graveyard |amenity=grave_yard) [0x10101 resolution 23]
+religion=christian & (landuse=cemetary | landuse=cemetery | amenity=graveyard |amenity=grave_yard) 							[0x10102 resolution 23]
+religion=jewish & (landuse=cemetary | landuse=cemetery | amenity=graveyard |amenity=grave_yard) 							[0x10103 resolution 23]
+(religion!=jewish | religion!=christian) & (landuse=cemetary | landuse=cemetery | amenity=graveyard |amenity=grave_yard) 	[0x10101 resolution 23]
 
 historic=archaeological_site | historic=archeological_site 						[0x10101 resolution 23]
 
-amenity=parking & (access!=no | access!=private ) 								[0x05 resolution 24]
+amenity=parking & access!=no & access!=private									[0x05 resolution 24]
 
 landuse=residential 															[0x02 resolution 12-26]
 
@@ -82,7 +85,7 @@ aerialway=station 																[0x0d resolution 23]
 waterway=riverbank | waterway=dock 												[0x46 resolution 16] # deprecated 
 natural=water & water=river 													[0x46 resolution 16]
 natural=water & intermittent=yes    { name '${name}' }							[0x4c resolution 16]
-natural=water { name '${name}' }									            [0x3c resolution 16]
+natural=water { name '${name}' }												[0x3c resolution 16]
 landuse=pond | landuse=basin 	{ name '${name}' }								[0x3c resolution 22]
 landuse=reservoir 		{ name '${name}' }										[0x3c resolution 20]
 

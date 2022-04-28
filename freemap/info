@@ -1,4 +1,4 @@
-#
+
 # This file contains information about the style.
 # It is completely optional.
 # 
@@ -6,7 +6,7 @@
 
 # A short one line description of the style
 #
-summary: freemapSKtopo 
+summary: freemap.sk topo map 
 
 # Version of the style itself
 #
@@ -14,5 +14,5 @@ version=1.0
 
 # A longer description of the style.
 description {
-freemap.sk hiking/cycle style
+freemap.sk hiking/cycle map style
 }
