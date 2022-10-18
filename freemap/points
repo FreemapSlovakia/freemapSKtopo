@@ -128,7 +128,7 @@ man_made=chimney																[0x640a resolution 20]
 # -- historicke --
 historic=castle & ruins!=yes 	{name '${name}'} 								[0x2c11 resolution 22]
 historic=castle & ruins=yes 	{name '${name}'} 								[0x2c13 resolution 22]
-historic=archaeological_site | historic=archeological_site 						[0x2c0e resolution 23]
+historic=archaeological_site | historic=archeological_site 						[0x2c12 resolution 23]
 ##historic=boundary_stone 														[0x5a00 resolution 24]
 historic=memorial | historic=monument {name '${name}'} 							[0x2c17 resolution 24]
 historic=ruins & tourism!=* 	{ name '${name}' }								[0x6419 resolution 22]
